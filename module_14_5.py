@@ -157,22 +157,6 @@ async def send_calories(message, state):
         await message.answer("Вы неверно ввели свой пол!\nПожалуйста, попробуйте еще раз! 😊")
     await state.finish()
 
-# @dp.message_handler(state=UserState.weight)
-# async def send_calories(message, state):
-#     await state.update_data(weight=message.text)
-#     data = await state.get_data()
-#     if data["gender"] == "1":
-#         formula_woman = 10 * float(data["weight"]) + 6.25 * float(data["growth"]) - 5 * float(data["age"]) - 161
-#         await message.answer(f'Ваша женская норма калорий в сутки равна: {formula_woman} ккал.')
-#         await message.answer('Рассчитано по упрощенному варианту формулы Миффлина-Сан Жеора.')
-#     elif data["gender"] == "2":
-#         formula_man = 10 * float(data["weight"]) + 6.25 * float(data["growth"]) - 5 * float(data["age"]) + 5
-#         await message.answer(f'Ваша мужская норма калорий в сутки равна {formula_man} ккал.')
-#         await message.answer('Рассчитано по упрощенному варианту формулы Миффлина-Сан Жеора.')
-#     elif int(data["gender"]) != "1" or "2":
-#         await message.answer("Вы неверно ввели цифру, чтобы указать свой пол!\nПожалуйста, попробуйте еще раз! 😊")
-#     await state.finish()
-
 @dp.message_handler()
 async def all_massages(message):
     await message.answer("Введите команду /start, чтобы начать общение.")
