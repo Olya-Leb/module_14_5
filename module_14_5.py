@@ -153,7 +153,7 @@ async def send_calories(message, state):
         formula_man = 10 * float(data["weight"]) + 6.25 * float(data["growth"]) - 5 * float(data["age"]) + 5
         await message.answer(f'Ваша мужская норма калорий в сутки равна {formula_man} ккал.')
         await message.answer('Рассчитано по упрощенному варианту формулы Миффлина-Сан Жеора.')
-    elif int(data["gender"]) != "1" or "2":
+    elif int(data["gender"]) != "Женский" or "Мужской":
         await message.answer("Вы неверно ввели свой пол!\nПожалуйста, попробуйте еще раз! 😊")
     await state.finish()
 
