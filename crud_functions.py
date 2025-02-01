@@ -11,7 +11,7 @@ def initiate_db():
     price INT NOT NULL
     )
     """)
-    # cursor.execute("DROP TABLE Users")
+
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS Users(
     id AUTO_INCREMENT INT PRIMARY KEY,
